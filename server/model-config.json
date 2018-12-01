@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "sources": [
+      "../common/models"
+    ],
+    "mixins": [
+    ]
+  },
+  "ACL": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "user": {
+    "dataSource": "mysqlDs",
+    "public": true
+  }
+}

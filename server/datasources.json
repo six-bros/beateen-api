@@ -1,0 +1,15 @@
+{
+  "mysqlDs": {
+    "host": "nomad.iptime.org",
+    "port": 3306,
+    "url": "",
+    "database": "ssdam",
+    "password": "nomadstar1",
+    "name": "mysqlDs",
+    "user": "root",
+    "connector": "mysql",
+    "charset": "utf8mb4",
+    "collation": "utf8mb4_unicode_ci",
+    "multipleStatements": true
+  }
+}

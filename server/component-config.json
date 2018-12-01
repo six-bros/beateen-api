@@ -1,0 +1,12 @@
+{
+  "loopback-component-explorer": {
+    "mountPath": "/explorer",
+    "uiDirs": "server/explorer",
+    "apiInfo": {
+      "title": "Beatween API Document",
+      "description": [
+      ]
+    }
+  },
+  "./components/version": true
+}
