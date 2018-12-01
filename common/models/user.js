@@ -48,7 +48,7 @@ module.exports = function (User) {
 
   User.remoteMethod('createUser', {
     description: '이메일 회원가입',
-    accessType: 'EXECUTE',
+    accessType: 'WRITE',
     notes: [
     ],
     accepts: [

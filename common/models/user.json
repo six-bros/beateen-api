@@ -24,8 +24,7 @@
     },
     "privateId": {
       "type": "string",
-      "required": true,
-      "description": "이메일 형식"
+      "required": true
     },
     "email": {
       "type": "string",
@@ -84,8 +83,39 @@
     {
       "accessType": "*",
       "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": [
+        "existsToUser",
+        "resetPW",
+        "createUser",
+        "loginUser",
+        "logoutUser"
+      ]
     }
   ],
   "methods": {}

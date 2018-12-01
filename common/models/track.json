@@ -1,0 +1,58 @@
+{
+  "name": "music",
+  "description": "음원",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "privateId": {
+      "type": "string",
+      "required": true
+    },
+    "musicId": {
+      "type": "number"
+    },
+    "userId": {
+      "type": "number",
+      "index": {
+        "unique": false
+      }
+    },
+    "audioURL": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "created": {
+      "type": "date",
+      "required": false,
+      "description": "생성날짜",
+      "defaultFn": "now"
+    },
+    "modified": {
+      "type": "date",
+      "required": false,
+      "description": "생성날짜",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "music": {
+      "type": "belongsTo",
+      "model": "music",
+      "foreignKey": "musicId",
+      "options": {
+        "disableInclude": false
+      }
+    }
+  },
+  "acls": [
+  ],
+  "methods": {}
+}

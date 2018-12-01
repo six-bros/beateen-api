@@ -60,11 +60,11 @@ ctrlUser.loginUser = (data, cb) => {
   async.waterfall(tasks, cb);
 };
 
-
 /**
  * 사용자 페이지
  */
 ctrlUser.findUserById = (id, myId, cb) => {
+
 };
 
 /**
