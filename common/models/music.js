@@ -13,6 +13,9 @@ module.exports = function (Music) {
    * Controller
    */
   Music.findMusicById = ctrlMusic.findMusicById;
+  Music.findMusicMixTapes = ctrlMusic.findMusicMixTapes;
+  Music.findMusicBeats = ctrlMusic.findMusicBeats;
+
   Music.createMusic = ctrlMusic.createMusic;
   Music.createCollaboration = ctrlMusic.createCollaboration;
 
@@ -27,6 +30,28 @@ module.exports = function (Music) {
     ],
     returns: {arg: 'data', type: 'object', root: true},
     http: {verb: 'get', path: '/:id'},
+  });
+
+  Music.remoteMethod('findMusicMixTapes', {
+    description: '음원 믹스테입 리스트 보기',
+    accessType: 'READ',
+    notes: [
+    ],
+    accepts: [
+    ],
+    returns: {arg: 'data', type: 'object', root: true},
+    http: {verb: 'get', path: '/mixtapes'},
+  });
+
+  Music.remoteMethod('findMusicBeats', {
+    description: '음원 비트 리스트 보기',
+    accessType: 'READ',
+    notes: [
+    ],
+    accepts: [
+    ],
+    returns: {arg: 'data', type: 'object', root: true},
+    http: {verb: 'get', path: '/beats'},
   });
 
   Music.remoteMethod('createMusic', {
