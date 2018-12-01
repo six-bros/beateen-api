@@ -4,6 +4,7 @@
 const ctrlUser = require('../../server/controller/ctrl.user');
 const hilde = require('../../core/hide-remote-method');
 const common = require('../../core/common')
+const doc = require('../../doc/document');
 
 module.exports = function (User) {
   hilde.relationRemoteMethod(User); // relation remote method 제거
@@ -24,7 +25,10 @@ module.exports = function (User) {
   User.remoteMethod('loginUser', {
     description: '이메일 로그인',
     accessType: 'EXECUTE',
-    notes: [],
+    notes: [
+      '### Request',
+      `\t${doc.user.request.signIn}`
+    ],
     accepts: [
       {arg: 'data', type: 'object', required: true, http: {source: 'body'}},
     ],
@@ -50,6 +54,8 @@ module.exports = function (User) {
     description: '이메일 회원가입',
     accessType: 'WRITE',
     notes: [
+      '### Request',
+      `\t${doc.user.request.signUp}`
     ],
     accepts: [
       {

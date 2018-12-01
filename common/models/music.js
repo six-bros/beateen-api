@@ -4,6 +4,7 @@
 const ctrlMusic = require('../../server/controller/ctrl.music');
 const hilde = require('../../core/hide-remote-method');
 const common = require('../../core/common')
+const doc = require('../../doc/document');
 
 module.exports = function (Music) {
   hilde.relationRemoteMethod(Music); // relation remote method 제거
@@ -19,6 +20,7 @@ module.exports = function (Music) {
     description: '음원 상세보기',
     accessType: 'READ',
     notes: [
+
     ],
     accepts: [
       {arg: 'id', type: 'any', required: true, http: {source: 'path'}, description: 'musicId'}
@@ -31,6 +33,8 @@ module.exports = function (Music) {
     description: '비트 업로드',
     accessType: 'WRITE',
     notes: [
+      '### Request',
+      `\t${doc.music.request.create}`
     ],
     accepts: [
       {
@@ -45,6 +49,8 @@ module.exports = function (Music) {
     description: '랩 업로드',
     accessType: 'WRITE',
     notes: [
+      '### Request',
+      `\t${doc.music.request.collaborate}`
     ],
     accepts: [
       {arg: 'id', type: 'any', required: true, http: {source: 'path'}, description: 'musicId'},
