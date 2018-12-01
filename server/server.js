@@ -3,8 +3,7 @@
 const loopback = require('loopback');
 const boot = require('loopback-boot');
 const ModelInst = require('./model-instnace');
-const initConfig = require('../config/config');
-const common = require('../core/common');
+// const common = require('../core/common');
 
 const app = module.exports = loopback();
 app.start = function () {

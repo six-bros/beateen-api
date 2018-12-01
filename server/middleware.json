@@ -42,7 +42,7 @@
   },
   "files": {},
   "final": {
-    "./middleware/url-not-found-handler": {}
+    "loopback#urlNotFound": {}
   },
   "final:after": {
     "strong-error-handler": {

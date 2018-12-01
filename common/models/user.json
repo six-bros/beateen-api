@@ -1,0 +1,92 @@
+{
+  "name": "user",
+  "description": "회원",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "allowEternalTokens": true,
+  "hidden": [
+    "password"
+  ],
+  "properties": {
+    "username": false,
+    "emailVerified": false,
+    "verificationToken": false,
+    "realm": false,
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true,
+      "description": "User ID",
+      "dataType": "bigint"
+    },
+    "privateId": {
+      "type": "string",
+      "required": true,
+      "description": "이메일 형식"
+    },
+    "email": {
+      "type": "string",
+      "required": false,
+      "index": {
+        "unique": true
+      },
+      "description": "이메일 형식",
+      "length": 191
+    },
+    "name": {
+      "type": "string",
+      "required": false,
+      "index": {
+        "unique": false
+      },
+      "description": "네임",
+      "length": 191
+    },
+    "password": {
+      "type": "string",
+      "required": false,
+      "description": "6 글자이상"
+    },
+    "profileImage": {
+      "type": "string",
+      "required": false,
+      "description": "프로필 이미지 URL 주소",
+      "default": null
+    },
+    "created": {
+      "type": "date",
+      "required": false,
+      "description": "생성 날짜",
+      "defaultFn": "now"
+    },
+    "modified": {
+      "type": "date",
+      "required": false,
+      "description": "수정 날짜",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "AccessToken",
+      "foreignKey": "userId",
+      "options": {
+        "disableInclude": true
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

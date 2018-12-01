@@ -8,5 +8,5 @@
       ]
     }
   },
-  "./components/version": true
+  "./components/version": false
 }
