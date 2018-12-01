@@ -5,7 +5,9 @@
 const ModelInst = {
   mysqlDs: null,
   User: null,
-  AccessToken: null
+  AccessToken: null,
+  Music: null,
+  Track: null
 };
 module.exports = ModelInst;
 

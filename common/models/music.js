@@ -1,7 +1,7 @@
 /* eslint-disable max-len,comma-dangle */
 'use strict';
 
-const ctrlMusic = require('../../server/controller/ctrl.Music');
+const ctrlMusic = require('../../server/controller/ctrl.music');
 const hilde = require('../../core/hide-remote-method');
 const common = require('../../core/common')
 
@@ -11,48 +11,49 @@ module.exports = function (Music) {
   /**
    * Controller
    */
+  Music.findMusicById = ctrlMusic.findMusicById;
   Music.createMusic = ctrlMusic.createMusic;
+  Music.createCollaboration = ctrlMusic.createCollaboration;
 
   Music.remoteMethod('findMusicById', {
-    description: '',
-    accessType: 'WRITE',
+    description: '음원 상세보기',
+    accessType: 'READ',
     notes: [
     ],
     accepts: [
-      {
-        arg: 'data', type: 'object', description: '입력', http: {source: 'body'},
-      },
+      {arg: 'id', type: 'any', required: true, http: {source: 'path'}, description: 'musicId'}
     ],
     returns: {arg: 'data', type: 'object', root: true},
-    http: {verb: 'post', path: '/'},
+    http: {verb: 'get', path: '/:id'},
   });
 
   Music.remoteMethod('createMusic', {
-    description: '',
+    description: '비트 업로드',
     accessType: 'WRITE',
     notes: [
     ],
     accepts: [
       {
         arg: 'data', type: 'object', description: '입력', http: {source: 'body'},
-      },
+      }
     ],
     returns: {arg: 'data', type: 'object', root: true},
     http: {verb: 'post', path: '/'},
   });
 
-  Music.remoteMethod('createMusicCollaboration', {
-    description: '',
+  Music.remoteMethod('createCollaboration', {
+    description: '랩 업로드',
     accessType: 'WRITE',
     notes: [
     ],
     accepts: [
+      {arg: 'id', type: 'any', required: true, http: {source: 'path'}, description: 'musicId'},
       {
         arg: 'data', type: 'object', description: '입력', http: {source: 'body'},
       },
     ],
     returns: {arg: 'data', type: 'object', root: true},
-    http: {verb: 'post', path: '/'},
+    http: {verb: 'put', path: '/:id'},
   });
 
 };

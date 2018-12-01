@@ -77,6 +77,14 @@
       "options": {
         "disableInclude": true
       }
+    },
+    "tracks": {
+      "type": "hasMany",
+      "model": "track",
+      "foreignKey": "userId",
+      "options": {
+        "disableInclude": false
+      }
     }
   },
   "acls": [

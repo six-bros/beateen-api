@@ -26,8 +26,10 @@ app.use(loopback.token({
 boot(app, __dirname, function (err) {
   if (err) throw err;
   ModelInst.mysqlDs = app.dataSources.mysqlDs;
-  ModelInst.User = (loopback.getModel('user'));
   ModelInst.AccessToken = (loopback.getModel('AccessToken'));
+  ModelInst.User = (loopback.getModel('user'));
+  ModelInst.Music = (loopback.getModel('music'));
+  ModelInst.Track = (loopback.getModel('track'));
   if (require.main === module)
     app.start();
 });

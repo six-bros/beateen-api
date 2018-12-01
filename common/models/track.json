@@ -1,6 +1,6 @@
 {
-  "name": "music",
-  "description": "음원",
+  "name": "track",
+  "description": "트렉",
   "base": "Model",
   "idInjection": true,
   "options": {
@@ -15,10 +15,7 @@
       "type": "number"
     },
     "userId": {
-      "type": "number",
-      "index": {
-        "unique": false
-      }
+      "type": "number"
     },
     "audioURL": {
       "type": "string",
@@ -47,6 +44,14 @@
       "type": "belongsTo",
       "model": "music",
       "foreignKey": "musicId",
+      "options": {
+        "disableInclude": false
+      }
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId",
       "options": {
         "disableInclude": false
       }

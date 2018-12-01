@@ -10,7 +10,9 @@ module.exports = function (app) {
   const tables = [
     'user',
     'AccessToken',
-    'ACL'
+    'ACL',
+    'music',
+    'track'
   ];
 
   const tasks = [

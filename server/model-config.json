@@ -17,5 +17,13 @@
   "user": {
     "dataSource": "mysqlDs",
     "public": true
+  },
+  "music": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "track": {
+    "dataSource": "mysqlDs",
+    "public": false
   }
 }

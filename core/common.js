@@ -26,14 +26,7 @@ common.count = (model, where, cb) => {
 };
 
 common.findOneModel = (model, filter, cb) => {
-  model.findOne(filter, (err, result) => {
-    if (result === null) {
-      err = new Error('게시물은 삭제됬거나 비공개 처리되었습니다.');
-      err.statusCode = 404;
-      err.name = 'Not found';
-    }
-    cb(err, result);
-  });
+  model.findOne(filter, cb);
 };
 
 common.findById = (models, id, cb) => {

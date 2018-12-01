@@ -10,7 +10,10 @@
     "title": {
       "type": "string"
     },
-    "profileImage": {
+    "userId": {
+      "type": "number"
+    },
+    "albumImage": {
       "type": "string",
       "required": false,
       "description": "프로필 이미지 URL 주소",
@@ -30,7 +33,24 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId",
+      "options": {
+        "disableInclude": false
+      }
+    },
+    "tracks": {
+      "type": "hasMany",
+      "model": "track",
+      "foreignKey": "musicId",
+      "options": {
+        "disableInclude": false
+      }
+    }
+  },
   "acls": [
     {
       "accessType": "*",
