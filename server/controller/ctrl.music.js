@@ -16,6 +16,7 @@ ctrlMusic.findMusicMixTapes = (cb) => {
     'left join track r on r.musicId = m.id ' +
     'where r.role = "RP" ' +
     'group by m.id ' +
+    'ORDER BY RAND() ' +
     'limit 12;'
    models.mysqlDs.connector.execute(query, [], cb);
 };
@@ -26,6 +27,7 @@ ctrlMusic.findMusicBeats = (cb) => {
     'left join track r on r.musicId = m.id ' +
     'where r.role = "BM" ' +
     'group by m.id ' +
+    'ORDER BY RAND() ' +
     'limit 12;'
   models.mysqlDs.connector.execute(query, [], cb);
 };
